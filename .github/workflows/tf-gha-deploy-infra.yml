@@ -39,7 +39,12 @@ jobs:
   deploy-azureml-resources:
     runs-on: ubuntu-latest
     steps:
-    - id: deploy-aml-workspace
-      name: deploy-aml-workspace
-      run: echo "OK"
+      - name: Install latest Azure CLI
+        run: |
+         curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+         az --version  # ✅ Check installed version
+
+      - id: deploy-aml-workspace
+        name: deploy-aml-workspace
+        run: echo "OK"
 
