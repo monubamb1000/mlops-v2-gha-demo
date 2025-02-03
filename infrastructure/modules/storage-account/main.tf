@@ -12,7 +12,7 @@ locals {
 resource "azurerm_storage_account" "st" {
   name                     = "st${local.safe_prefix}${local.safe_postfix}${var.env}"
   resource_group_name      = var.rg_name
-  location                 = eastus
+  location                 = var.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   account_kind             = "StorageV2"
