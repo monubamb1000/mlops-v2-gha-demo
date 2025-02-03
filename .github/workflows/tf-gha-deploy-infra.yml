@@ -41,6 +41,8 @@ jobs:
     steps:
       - name: Install latest Azure CLI
         run: |
+         sudo apt-get update
+         sudo apt-get install -y ca-certificates curl apt-transport-https lsb-release gnupg
          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
          az --version  # ✅ Check installed version
 
