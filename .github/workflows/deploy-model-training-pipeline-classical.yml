@@ -30,14 +30,14 @@ jobs:
       creds: ${{secrets.AZURE_CREDENTIALS}}
       
   run-pipeline:
-      needs: [get-config, register-environment, register-dataset]  # ❌ Remove create-compute
+      needs: [get-config, register-environment, register-dataset]  
       uses: Azure/mlops-templates/.github/workflows/run-pipeline.yml@main
       with:
         resource_group: ${{ needs.get-config.outputs.resource_group }}
         workspace_name: ${{ needs.get-config.outputs.aml_workspace }}
         parameters-file: mlops/azureml/train/pipeline.yml
         job-name: test
-        compute-cluster: demomonkey0001  
+        compute-cluster: cpu-cluster  
       secrets:
           creds: ${{secrets.AZURE_CREDENTIALS}}
 
