@@ -7,7 +7,7 @@ variables:
   # Global
   ap_vm_image: ubuntu-20.04
 
-  namespace: mosnns #Note: A namespace with many characters will cause storage account creation to fail due to storage account names having a limit of 24 characters.
+  namespace: chumo #Note: A namespace with many characters will cause storage account creation to fail due to storage account names having a limit of 24 characters.
   postfix: a03
   location: eastus
 
